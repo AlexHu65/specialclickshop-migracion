@@ -1,0 +1,818 @@
+@media only screen and (min-width: 834px)
+{
+  /* Your Styles... */
+   .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+  .logo{
+        width: 100px;   
+   }
+}
+
+@media only screen and (min-height: 1194px)
+{ 
+   /* Your Styles... */
+   .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+  .logo{
+        width: 100px;   
+   }
+}
+
+@media only screen and (min-width: 1194px) and (orientation: portrait)
+{ 
+  /* Your Styles... */
+   .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+  .logo{
+        width: 100px;   
+   }
+}
+
+@media only screen and (min-width: 834px) and (orientation: landscape)
+{ /* Your Styles... */ 
+
+/* Your Styles... */
+   .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+  .logo{
+        width: 100px;   
+   }
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+                    only screen and (min--moz-device-pixel-ratio: 2),
+                    only screen and (-o-min-device-pixel-ratio: 2/1),
+                    only screen and (min-device-pixel-ratio: 2)
+{
+  /* Your Styles... */
+   .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+  .logo{
+        width: 100px;   
+   }
+}
+
+/* Ipad pro */
+
+
+@media only screen and (max-width: 1025px){
+
+}
+
+@media only screen and (max-width: 1024px){
+  
+  .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+  
+
+}
+
+@media only screen and (max-width: 768px){
+
+  .banner2-section {
+   display: none !important;
+  }
+  
+  .banner2-section {
+    height: 350px;
+    background-attachment: inherit !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+    
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+
+}
+
+@media only screen and (max-width: 479px){
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+@media only screen and (max-width: 425px){
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+@media only screen and (max-width: 375px){
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+@media only screen and (max-width: 320px){
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen (-webkit-min-device-pixel-ratio: 2) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Portrait */
+@media only screen (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Landscape */
+@media only screen (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Portrait */
+@media only screen and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Landscape */
+@media only screen (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* ----------- iPhone X ----------- */
+/* Portrait and Landscape */
+@media only (-webkit-min-device-pixel-ratio: 3) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Portrait */
+@media only screen (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+
+}
+
+/* Landscape */
+@media only screen (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+  .banner2-section {
+    background-size: cover !important;
+}
+
+  
+
+  #parallax-1{
+    background: none !important;
+  }
+
+  .main-banner-wooden img{
+    width: 75% !important;
+  }
+
+  #mainBanner img{
+    width: 80% !important;
+  }
+
+  #category{
+    height: 185px !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+  }
+
+  .login_form_inner {
+    box-shadow: 0px 10px 40px 0px rgb(56 74 235 / 10%);
+    height: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px !important;
+  }
+
+  .login_form_inner .login_form{
+    padding: 20px !important;
+  }
+  
+  @supports ( -webkit-touch-callout : none) {
+    .banner2-section {
+      background-attachment:scroll
+    }
+  }
+
+@supports not ( -webkit-touch-callout : none) {
+    .banner2-section {
+      background-attachment: fixed;
+    }
+ }
+
+}
