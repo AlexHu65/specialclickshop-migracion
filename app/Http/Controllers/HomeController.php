@@ -42,7 +42,8 @@ class HomeController extends Controller
             'app' => $this->app,
             'posts' => $this->posts,
             'products' => $this->products,
-            'offers' => $this->offers
+            'offers' => $this->offers,
+            'showMainBanner' => true
           ];
       
           return view('home.index', $parameters);
@@ -65,7 +66,6 @@ class HomeController extends Controller
         return [];
 
     }
-
 
     public function menuTraduccion($locale){
         
@@ -159,6 +159,5 @@ class HomeController extends Controller
     public function banners(Request $request){
         return Banner::where(['active' => 1])->orderBy('position')->get();
     }
-
 
 }

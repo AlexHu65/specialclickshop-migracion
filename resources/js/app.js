@@ -7,6 +7,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 
 const app = createApp({});
 const menu = createApp({});
+const banner = createApp({});
 
 app.use(VueSweetalert2);
 
@@ -21,7 +22,6 @@ import Dashboard from './components/Dashboard.vue';
 import ProductComponent from './components/ProductComponent.vue';
 
 app.component('example-component', ExampleComponent);
-app.component('banner-component', Banner);
 app.component('review-component', Review);
 app.component('gallery-component', Gallery);
 app.component('cart-component', Cart);
@@ -31,8 +31,12 @@ app.component('product-component', ProductComponent);
 
 menu.component('menu-component', Menu);
 
+banner.component('banner-component', Banner);
+
+
 app.mount('#app');
 menu.mount('#menu');
+banner.mount('#banner');
 
 // ---------- Go Top ---------------//
 $('.scrolltop').on('click', function(){

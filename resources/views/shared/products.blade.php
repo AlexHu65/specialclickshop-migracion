@@ -1,4 +1,4 @@
-<section class="section-margin--small mb-5">
+<section class="mt-3 mb-5">
     <div class="container">
       <div class="row">
         <div class="col-xl-3 col-lg-4 col-md-5">
@@ -9,7 +9,7 @@
                 <form action="#">
                     <ul>
                         @foreach ($categories as $item)
-                            <li class="filter-list"><label for="men"><a href="{{route('categories.detail' , ['slug' => $item->slug])}}">{{$item->name}}</a><span> ({{count($item->products)}})</span></label></li>
+                            <li class="filter-list"><label for="men"><a class="text-dark" href="{{route('categories.detail' , ['slug' => $item->slug])}}">{{$item->name}}</a><span> ({{count($item->products)}})</span></label></li>
                         @endforeach
                     </ul>                   
                 </form>
@@ -25,27 +25,26 @@
 
             <ul class="common-filter list-unstyled">
               @isset($media)
-              <li class="main-categories media">
+              <li class="main-categories media d-flex justify-items-between align-items-center">
                 <img style="width: 30%;" class="mr-3" src="{{asset('storage')}}/{{$media}}" alt="Generic placeholder image">
                 <div class="media-body">
                   <h6 class="mt-0 mb-1"><b>{{$textMedia}}</b></h6>
                 </div>
               </li>
               @endisset
-              <button id="more-details" onclick="click_detail()" class="btn btn-success w-100 mt-2" style="color:white;" href="#">
+              <a id="more-details" class="text-dark pointer mt-2 mb-2" onclick="click_detail()">
                 {{__('Show More')}} <i class="ti-angle-right"></i> 
-              </button>
-
+              </a>
               <div id="contentModels" style="height: 0px; overflow:hidden;">
-                @foreach ($categories as $category)
-                @foreach ($category->models as $item)
-                <li class="main-categories media p-1 ">
-                  <div class="media-body m-1">
-                    <a href="{{route('model.shop' , ['id' => $item->id])}}">{{$item->name}}</h6></a>
-                  </div>
-                </li>
-                @endforeach    
-              @endforeach  
+                <ul class="list-group">
+                  @foreach ($categories as $category)
+                    @foreach ($category->models as $item)
+                      <li class="list-group-item">
+                        <a class="text-dark" href="{{route('model.shop' , ['id' => $item->id])}}"><img style="width: 20%" class="img-thumbnail b-0" src="{{asset('storage')}}/{{$item->thumbnail}}" alt=""> {{$item->name}}</a>  
+                      </li>                
+                    @endforeach    
+                  @endforeach
+                </ul>
               </div>
             </ul>
           </div>
@@ -53,26 +52,15 @@
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7">
           <!-- Start Filter Bar -->
+          @isset($search)
           <div class="filter-bar d-flex flex-wrap align-items-center">
-            <div>
-              @isset($search)
-              <p class="pt-3">
-                <small>{{__('Search results')}}: <b>{{count($products)}}</b> , {{__('for')}} <b>{{$search}}</b> </small>
-              </p>      
-              @endisset
-              <div class="input-group filter-bar-search">
-                <form action="/search" method="POST">
-                  @csrf
-                  <input type="text" id="search" name="search" placeholder="{{ __('Search') }}">
-                  <button class="btn btn-default" type="button"><i class="ti-search"></i></button>
-                </form>
-                
-                
-              </div>
+            <div class="input-group filter-bar-search">
+                <p class="pt-3">
+                  <small>{{__('Search results')}}: <b>{{count($products)}}</b> {{__('for')}} <b>{{$search}}</b> </small>
+                </p>      
             </div>
           </div>
-          <!-- End Filter Bar -->
-          <!-- Start Best Seller -->
+          @endisset
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
                 @foreach ($products as $product)
@@ -86,21 +74,18 @@
                           </div>
                         @endif     
                         <div style="min-width: 250px; height:250px; background-image: url({{Voyager::image($product->thumbnail('medium', 'thumb'))}});background-size: contain;background-position: center center;background-repeat: no-repeat;border-radius:10px;">
-              
                         </div>  
                         <ul class="card-product__imgOverlay">
                           <li><button><a href="{{route('product.detail' ,['slug' => $product->slug])}}"><i class="ti-search"></i></a></button></li>
                         </ul>
                       </div>
                       <div class="card-body">
-                        <h4 class="card-product__title"><a href="{{route('product.detail' ,['slug' => $product->slug])}}">{{( App::getLocale() == 'en' ? $product->name : $product->name_esp)}}</a></h4>
-                            @php
-                                $newKeyword =  explode(',',$product->keywords);
-                            @endphp
+                        <h4 class="card-product__title">
+                          <small>
+                            <a href="{{route('product.detail' ,['slug' => $product->slug])}}">{{( App::getLocale() == 'en' ? $product->name : $product->name_esp)}}</a>
+                          </small>
+                        </h4>
                             
-                            @foreach ($newKeyword as $keyword)
-                                <span class="badge badge-info m-1">{{$keyword}}</span>                                
-                            @endforeach 
                         @if ($product->offer > 0)
                           <p class="card-product__price {{($product->offer > 0 ? 'text-success' : '')}}">${{number_format(floatval($product->offer),2)}}</p>
                         @endif
@@ -111,7 +96,12 @@
                     
                 @endforeach
             </div>
-            {{ $products->links('pagination::bootstrap-5') }}
+
+            @isset($search)
+              {{ $products->links('shared.pagination', ['search' => $search])}}
+            @else
+              {{ $products->links('shared.pagination')}}
+            @endisset            
 
           </section>
           <!-- End Best Seller -->

@@ -98,7 +98,7 @@ class ProductController extends Controller
                 'products' => Products::where('name','like','%'.$request->search.'%')->paginate(12)
             ];
 
-            return view('search.index', $parameters);
+            return view('products.index', $parameters);
         }
 
         return redirect('products');
@@ -255,11 +255,12 @@ class ProductController extends Controller
             $parameters = [
                 'title' => __('Models'),
                 'categories' => Categories::where(['active' => 1])->get(),
-                'models' => $category->models()->orderBy('id')->paginate(12)
+                'models' => $category->models()->orderBy('id')->paginate(12),
+                'app' => $this->app = config('app.name')
             ];           
             
     
-            return view('models.index', $parameters);
+            return view('phones.index', $parameters);
         }
 
         $parameters = [

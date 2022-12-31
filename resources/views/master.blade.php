@@ -26,14 +26,22 @@
 <body>
 
 	<header class="header_area">
-		<div id="menu">
+		<div class="shadow-sm" id="menu">
 			@include('partials.menu')
 		</div>
+		
 	</header>
 	<!--Aqui vamos a poner los compoenentes de vue-->
+	<main>
+		<div id="banner">
+			@include('partials.banner')
+		</div>
 		<div id="app">
+			@include('shared.banner')
+			@include('shared.breadcrumb')
 			@yield('content')
 		</div>
+	</main>
 	<footer class="footer">
 			@include('partials.footer')
 	</footer>

@@ -23,7 +23,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/products/{slug}', 'detail')->name('product.detail');
     Route::get('/products/categories/model/{id}', 'shop')->name('model.shop');
     Route::post('/products/comment', 'comment')->name('product.comment');
-    Route::post('/search/', 'search')->name('search.index');
+    Route::get('/search/', 'search')->name('search.index');
     
 });
 

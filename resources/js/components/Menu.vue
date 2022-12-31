@@ -1,14 +1,8 @@
 <template>
-    <div class="shadow-lg bg-body rounded">
+    <div class="rounded">
         <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-light p-4">
+        <div class="p-4">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item d-flex justify-content-between align-items-center">
-                    <a class="nav-link active link" aria-current="page" href="/dashboard">{{translates.account}}</a>
-                    <a v-if="language" href="#">
-                        <img :src="`${url}/img/${language.flag}`" style="width: 65%;">
-                    </a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link active link" aria-current="page" href="/products">{{translates.shop}}</a>
                 </li>
@@ -39,7 +33,7 @@
             </ul>
         </div>
     </div>
-    <nav class="navbar navbar-dark bg-light">
+    <nav class="navbar navbar-dark">
         <div class="container-fluid p-2">
             <div class="d-flex justify-content-between align-items-center">   
                 <div class="w-30">
