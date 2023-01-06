@@ -128,13 +128,16 @@ class ProductController extends Controller
 
         if($product){
 
+            $category = Categories::find($product->category->id);
+
             $parameters = [
                 'app' => $this->app,
                 'title' => $product->name,
                 'product' => $product,
                 'categories' => Categories::where(['active' => 1])->get(),
-            ];
-    
+                'related' =>  $category->products
+            ]; 
+
             return view('products.detail.index' , $parameters);
         }
 

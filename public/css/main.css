@@ -412,6 +412,7 @@ html {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  font-family: 'Roboto' !important;
 }
 .custom-img-card {
   height: 250px;

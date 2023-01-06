@@ -20,7 +20,6 @@ class Articles extends Model
     public function category(){
         return $this->belongsTo(Categories::class, 'category_id');
     }
-
     
     public function colorPrincipal(){
         return $this->belongsTo(Color::class, 'id_colorprincipal');

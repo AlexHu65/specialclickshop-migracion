@@ -95,3 +95,6 @@
         </div>
     </div>
 </section>
+
+
+@include('shared.related' , ['products' => $related])
