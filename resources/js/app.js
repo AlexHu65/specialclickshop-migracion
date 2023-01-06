@@ -39,7 +39,8 @@ menu.mount('#menu');
 banner.mount('#banner');
 
 // ---------- Go Top ---------------//
-$('.scrolltop').on('click', function(){
+$('.scrolltop').on('click', function(e){
+    e.preventDefault();
     $(window).scrollTop(0);
 });
 

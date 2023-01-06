@@ -1,7 +1,7 @@
 <template>
     <div class="rounded">
         <div class="collapse" id="navbarToggleExternalContent">
-        <div class="p-4">
+        <div class="p-4 bg-light">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active link" aria-current="page" href="/products">{{translates.shop}}</a>

@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', $title)
+@section('title', $app . ' | ' . $title)
 @section('content')
 
 @include('products.detail.secciones.product')

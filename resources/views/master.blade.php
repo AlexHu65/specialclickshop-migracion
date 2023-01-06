@@ -42,8 +42,25 @@
 			@yield('content')
 		</div>
 	</main>
-	<footer class="footer">
-			@include('partials.footer')
+	<footer class="footer mb-4">
+		<div class="container-fluid bottom-bar">
+			<div class="d-flex justify-content-between align-items-center p-1">
+				<div class="d-flex justify-content-start align-items-center button-top">
+					<div class="p-1 m-1 rounded-circle bg-dark d-flex justify-content-center align-items-center footer-button">
+						<a style="color: white;" target="_blank" href="{{setting('site.facebook')}}"><i class="fab fa-facebook-f"></i></a>
+					</div>
+					<div class="p-1 m-1 rounded-circle bg-dark d-flex justify-content-center align-items-center footer-button">
+						<a style="color: white;" target="_blank" href="{{setting('site.instagram')}}"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+				<div class="d-flex justify-content-start align-items-center  social-media">
+					<div class="p-1 m-1 rounded-circle bg-dark d-flex justify-content-center align-items-center footer-button">
+						<a class="scrolltop" href=""><i style="color: white;"  class="fas fa-angle-up"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		@include('partials.footer')
 	</footer>
 	@include('partials.scripts')
 </body>

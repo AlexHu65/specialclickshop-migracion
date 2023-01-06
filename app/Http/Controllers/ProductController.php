@@ -9,11 +9,27 @@ use App\Models\Comments;
 use App\Models\Review;
 use App\Models\Models;
 use App\Models\Color;
+use App\Models\Blog;
 use App\Models\ArticuloInventario as Inventario;
 use App\Http\Requests\CommentRequest;
 
 class ProductController extends Controller
 {
+    public $title;
+    public $posts;
+    public $categories;
+    public $products;
+    public $offers;
+    public $app;
+
+    public function __construct(){
+        $this->title = 'Shop';
+        $this->app = config('app.name');
+        $this->posts = Blog::where(['active' => 1])->orderBy('created_at')->get()->take(3);
+        $this->categories = Categories::where(['active' => 1])->get();
+        $this->products =  Products::where(['status' => 1])->inRandomOrder()->get();
+        $this->offers =  Products::where('offer','>', 0)->get();
+    }
 
     public function inventario(Request $request){
 
@@ -56,6 +72,7 @@ class ProductController extends Controller
             //solo si encuentra category
             $parameters = [
                 'title' => $category->name,
+                'app' => $this->app,
                 'products' => $category->products()->paginate(12),
                 'categories' => Categories::where(['active' => 1])->get(),
                 'banner' => $category->banner
@@ -72,6 +89,7 @@ class ProductController extends Controller
 
         $parameters = [
             'title' => 'Shop',
+            'app' => $this->app,
             'categories' => Categories::where(['active' => 1])->get(),
             'products' => Products::where(['status' => 1])->paginate(12)
         ];
@@ -111,6 +129,7 @@ class ProductController extends Controller
         if($product){
 
             $parameters = [
+                'app' => $this->app,
                 'title' => $product->name,
                 'product' => $product,
                 'categories' => Categories::where(['active' => 1])->get(),
@@ -233,6 +252,7 @@ class ProductController extends Controller
 
         $parameters = [
             'title' => __('SPECIAL OFFERS'),
+            'app' => $this->app,
             'categories' => Categories::where(['active' => 1])->get(),
             'products' => Products::where('offer', '>' , 0)->paginate(12)
         ];

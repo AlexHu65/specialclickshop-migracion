@@ -46,22 +46,7 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="wrapper">
-
-    <div class="floater">
-        <div class="scrolltop">
-          <i class="fas fa-angle-up"></i>
-        </div>
-        <div class="share-wrap">
-              <ul>
-                <li class="facebook"><a style="color: white;" target="_blank" href="{{setting('site.facebook')}}"><i class="fab fa-facebook-f"></i></a></li>
-                <li class="insta"><a style="color: white;" target="_blank" href="{{setting('site.instagram')}}"><i class="fab fa-instagram"></i></a></li>
-                <li class=shareclk> <i class="fas fa-share-alt"></i> </li>
-            </ul>
-        </div>
-    </div>    
-  </div>
+  </div>  
 
   <div class="footer-bottom">
     <div class="container">

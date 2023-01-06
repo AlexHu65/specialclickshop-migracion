@@ -16,6 +16,7 @@ class BlogController extends Controller
     public $title;
     public $popular;
     public $tags;
+    public $app;
 
     public function __construct(){
 
@@ -24,7 +25,7 @@ class BlogController extends Controller
         $this->title = 'Blog';
         $this->popular = Blog::where(['active' => 1])->orderBy('views')->get()->take(5);
         $this->tags = Blog::where(['active' => 1])->orderBy('views')->get('tags');
-        
+        $this->app = config('app.name');        
     }
 
     public function index(){
@@ -34,6 +35,7 @@ class BlogController extends Controller
             'blogCategories' => $this->blogCategories,
             'posts' => Blog::where(['active' => 1])->paginate(10),
             'title' => $this->title,
+            'app' => $this->app,
             'popular' => $this->popular,
             'tags' => $this->tags
         ];
