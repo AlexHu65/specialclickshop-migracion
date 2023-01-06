@@ -23,7 +23,7 @@
 		</div>
 		<div class="row pt-3">
 			<div class="col">
-				{{ $models->links('pagination::bootstrap-5') }}
+				{{ $models->links('shared.pagination')}}
 			</div>
 		</div>
 	</div>
