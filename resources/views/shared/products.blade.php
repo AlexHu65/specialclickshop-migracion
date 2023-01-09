@@ -107,20 +107,5 @@
           <!-- End Best Seller -->
         </div>
       </div>
-    </div>
-    <script>
-      function click_detail(){
-    
-        const elem = document.getElementById('contentModels');
-
-        if(elem.style.height == 'auto'){
-    
-          elem.style.height = '0px';
-
-        }else{
-          elem.style.height = 'auto';
-        }
-      }
-
-    </script>
+    </div>    
   </section>

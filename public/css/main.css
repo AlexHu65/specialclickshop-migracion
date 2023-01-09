@@ -495,4 +495,10 @@ input[type="reset"] {
 #bannerSilder {
   overflow: hidden !important;
 }
+.review_box .list li a {
+  color: #555 !important;
+}
+.star-value :hover {
+  color: #ffc107 !important;
+}
 

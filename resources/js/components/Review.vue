@@ -13,42 +13,42 @@
                         <h3>{{translates.basado}} {{reviews.length}}</h3>
                         <ul class="list">
                             <li>
-                                <a href="#">5 {{translates.estrella}} 
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                <a href="#">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
                                     {{stars.five}}
                                 </a>
                             </li>
                             <li>
-                                <a href="#">4 {{translates.estrella}} 
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                <a href="#">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
                                     {{stars.four}}
                                 </a>
                             </li>
                             <li>
-                                <a href="#">3 {{translates.estrella}} 
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                <a href="#">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
                                     {{stars.three}}
                                 </a>
                             </li>
                             <li>
-                                <a href="#">2 {{translates.estrella}} 
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                <a href="#">
+                                    <i class="fa fa-star text-warning"></i>
+                                    <i class="fa fa-star text-warning"></i>
                                     {{stars.two}}
                                 </a>
                             </li>
                             <li>
-                                <a href="#">1 {{translates.estrella}} 
-                                    <i class="fa fa-star"></i>
+                                <a href="#">
+                                    <i class="fa fa-star text-warning"></i>
                                     {{stars.one}}
                                 </a>
                             </li>
@@ -66,8 +66,17 @@
                     </button>
                 </div>
                 <h4>{{translates.review}}</h4>
-                <p>{{translates.rating}}</p>
-                <star-rating v-bind:rating="1" v-bind:star-size="20" v-bind:show-rating="false" v-model="rating"></star-rating>
+                <p>{{translates.rating}}</p>  
+                <ul class="list">
+                    <li>  
+                        {{ rating }}                      
+                        <i @mouseenter="rating = 5" @mouseleave="rating = 0" class="fa fa-star star-value"></i>
+                        <i @mouseenter="rating = 4" @mouseleave="rating = 0" class="fa fa-star star-value"></i>
+                        <i @mouseenter="rating = 3" @mouseleave="rating = 0" class="fa fa-star star-value"></i>
+                        <i @mouseenter="rating = 2" @mouseleave="rating = 0" class="fa fa-star star-value"></i>
+                        <i @mouseenter="rating = 1" @mouseleave="rating = 0" class="fa fa-star star-value"></i>
+                    </li>
+                </ul>              
                 <form @submit.prevent="saveReviews" class="form-contact form-review mt-3">
                 <div class="form-group">                    
                     <input class="form-control" name="name" type="text" v-model="name" :placeholder="translates.name">
@@ -130,6 +139,9 @@
                     this.translates = res.data;
                 }).catch( res => console.warn );
             },
+            selectStart(value){
+                console.log('OK', value);
+            },
             getReviews(){ 
 
                 axios.get(`${this.url}/api/reviews/${this.product}`).then( res => {
@@ -162,7 +174,7 @@
 
 
                     }
-                }).catch( res => console.warn );
+                }).catch( res => console.warn(res) );
             },
             saveReviews(){
 
@@ -176,15 +188,13 @@
                 };
 
                 axios.post(`${this.url}/api/reviews/save`, payload).then( res => {
-
                     this.msg = res.data.msg;                    
                     this.rating = 0;
                     this.name = '';
                     this.email = '';
                     this.message = '';
                     this.subject = '';
-
-                }).catch( res => console.warn );
+                }).catch( res => console.warn(res) );
             }
         }
     }
