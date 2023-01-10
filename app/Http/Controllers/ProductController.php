@@ -37,27 +37,27 @@ class ProductController extends Controller
 
         if($inventario){
             if($inventario->cantidad >= $request->quantity ){
-                return response(['inventario' => true, 'quantity' => $inventario->cantidad]); 
+                return response(['inventario' => true, 'quantity' => $inventario->cantidad]);
             }
-            return response(['inventario' => false, 'quantity' => $inventario->cantidad]); 
+            return response(['inventario' => false, 'quantity' => $inventario->cantidad]);
         }
-        
-       return response(['inventario' => false, 'quantity' => 0]); 
+
+       return response(['inventario' => false, 'quantity' => 0]);
 
     }
 
-    public function validateStock(Request $request){      
+    public function validateStock(Request $request){
 
         $inventario = Inventario::where(
             ['modelo_id' => $request->modelo_id ,
-            'articulo_id' => $request->articulo_id , 
+            'articulo_id' => $request->articulo_id ,
             'color_id' => $request->color_id])->first(['cantidad']);
 
         return response($inventario);
     }
 
 
-    public function validateStockTest(Request $request){      
+    public function validateStockTest(Request $request){
 
         $inventario = Inventario::with(['color', 'colorSecundario', 'article' , 'modelo'])->where(['articulo_id' => $request->product, 'modelo_id' => $request->modelo ])->get();
 
@@ -65,10 +65,10 @@ class ProductController extends Controller
     }
 
     public function index(Request $request){
-        
+
         $category = Categories::where(['active' => 1, 'slug'=> $request->slug])->first();
 
-        if($category){            
+        if($category){
             //solo si encuentra category
             $parameters = [
                 'title' => $category->name,
@@ -76,8 +76,8 @@ class ProductController extends Controller
                 'products' => $category->products()->paginate(12),
                 'categories' => Categories::where(['active' => 1])->get(),
                 'banner' => $category->banner
-            ];   
-            
+            ];
+
             return view('products.index', $parameters);
         }else{
             return redirect('products');
@@ -106,10 +106,11 @@ class ProductController extends Controller
     }
 
     public function search(Request $request){
-        
+
         if(isset($request->search)){
 
             $parameters = [
+                'app' => $this->app,
                 'search' => $request->search,
                 'title' => 'Shop | Result of search ' . $request->search ,
                 'categories' => Categories::where(['active' => 1])->get(),
@@ -136,7 +137,7 @@ class ProductController extends Controller
                 'product' => $product,
                 'categories' => Categories::where(['active' => 1])->get(),
                 'related' =>  $category->products
-            ]; 
+            ];
 
             return view('products.detail.index' , $parameters);
         }
@@ -208,7 +209,7 @@ class ProductController extends Controller
         foreach($request->carrito as $producto){
             $product = Products::where(['status' => 1 , 'id' => $producto['id']])->first();
             $price = ($product->offer > 0 ? $product->offer  :  $product->price);
-            $subtotal +=  number_format(floatval($price * $producto['quantity']),2);           
+            $subtotal +=  number_format(floatval($price * $producto['quantity']),2);
         }
 
         if($subtotal > 45){
@@ -223,7 +224,7 @@ class ProductController extends Controller
         }
 
 
-        return response(['total' => $total , 'status' => true , 'free' => $free]); 
+        return response(['total' => $total , 'status' => true , 'free' => $free]);
     }
 
     public function reviewsSave(Request $request){
@@ -245,10 +246,10 @@ class ProductController extends Controller
         $review->email = $request->email;
 
         if($review->save()){
-            return response(['msg' => 'Your review was received.', 'status' => true]); 
+            return response(['msg' => 'Your review was received.', 'status' => true]);
         }
 
-        return response(['msg' => 'Error on review.', 'status' => false]); 
+        return response(['msg' => 'Error on review.', 'status' => false]);
     }
 
     public function offers(Request $request){
@@ -280,9 +281,9 @@ class ProductController extends Controller
                 'categories' => Categories::where(['active' => 1])->get(),
                 'models' => $category->models()->orderBy('id')->paginate(12),
                 'app' => $this->app = config('app.name')
-            ];           
-            
-    
+            ];
+
+
             return view('phones.index', $parameters);
         }
 
@@ -292,7 +293,7 @@ class ProductController extends Controller
         ];
 
         return view('shop.index', $parameters);
-        
+
 
     }
 
