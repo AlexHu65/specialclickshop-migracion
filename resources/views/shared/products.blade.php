@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-xl-3 col-lg-4 col-md-5">
           <div class="sidebar-categories">
-            <div class="head roboto">{{ __('Browse Categories') }}</div>
+            <div class="head roboto">{{ __('Categories') }}</div>
             <ul class="main-categories">
               <li class="common-filter">
                 <form action="#">
@@ -20,14 +20,14 @@
 
           <div class="sidebar-categories">
             <div data-bs-toggle="collapse" data-bs-target="#modelosAccordion" aria-expanded="true" aria-controls="modelosAccordion" class="head pointer roboto d-flex justify-content-between">
-              {{ __('Browse Models') }} <small class="s11">({{__('Show more')}})</small>
+              {{ __('Models') }} <small class="s11">({{__('Show more')}})</small>
             </div>
             <ul class="common-filter list-unstyled">
               @isset($media)
               <li class="main-categories media d-flex justify-items-between align-items-center">
                 <img style="width: 30%;" class="mr-3" src="{{asset('storage')}}/{{$media}}" alt="Generic placeholder image">
                 <div class="media-body">
-                  <h6 class="mt-0 mb-1"><b>{{$textMedia}}</b></h6>
+                  <span class="mt-0 mb-1 poppins"><b>{{$textMedia}}</b></span>
                 </div>
               </li>
               @endisset
