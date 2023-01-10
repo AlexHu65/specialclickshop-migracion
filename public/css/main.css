@@ -14,6 +14,9 @@ tr,
 th {
   font-family: 'ABeeZee', sans-serif !important;
 }
+.s11 {
+  font-size: 11px !important;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -500,5 +503,8 @@ input[type="reset"] {
 }
 .star-value :hover {
   color: #ffc107 !important;
+}
+.pointer {
+  cursor: pointer !important;
 }
 

@@ -11,18 +11,17 @@
                         @foreach ($categories as $item)
                             <li class="filter-list"><label for="men"><a class="text-dark" href="{{route('categories.detail' , ['slug' => $item->slug])}}">{{$item->name}}</a><span> ({{count($item->products)}})</span></label></li>
                         @endforeach
-                    </ul>                   
+                    </ul>
                 </form>
               </li>
             </ul>
           </div>
           <hr>
-          
-          <div class="sidebar-categories">
-            <div class="head roboto d-flex justify-content-between">
-              {{ __('Browse Models') }}
-            </div>
 
+          <div class="sidebar-categories">
+            <div data-bs-toggle="collapse" data-bs-target="#modelosAccordion" aria-expanded="true" aria-controls="modelosAccordion" class="head pointer roboto d-flex justify-content-between">
+              {{ __('Browse Models') }} <small class="s11">({{__('Show more')}})</small>
+            </div>
             <ul class="common-filter list-unstyled">
               @isset($media)
               <li class="main-categories media d-flex justify-items-between align-items-center">
@@ -32,23 +31,27 @@
                 </div>
               </li>
               @endisset
-              <a id="more-details" class="text-dark pointer mt-2 mb-2" onclick="click_detail()">
-                {{__('Show More')}} <i class="ti-angle-right"></i> 
-              </a>
-              <div id="contentModels" style="height: 0px; overflow:hidden;">
-                <ul class="list-group">
-                  @foreach ($categories as $category)
-                    @foreach ($category->models as $item)
-                      <li class="list-group-item">
-                        <a class="text-dark" href="{{route('model.shop' , ['id' => $item->id])}}"><img style="width: 20%" class="img-thumbnail b-0" src="{{asset('storage')}}/{{$item->thumbnail}}" alt=""> {{$item->name}}</a>  
-                      </li>                
-                    @endforeach    
-                  @endforeach
-                </ul>
+              <div class="accordion" id="modelosAccordion1">
+                <div class="accordion-item">
+                  <div id="modelosAccordion" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#modelosAccordion1">
+                    <div class="accordion-body">
+                        <ul class="list-group">
+                            @foreach ($categories as $category)
+                                @foreach ($category->models as $item)
+                                <li class="list-group-item">
+                                    <a class="text-dark" href="{{route('model.shop' , ['id' => $item->id])}}">
+                                        <img style="width: 20%" class="img-thumbnail b-0" src="{{asset('storage')}}/{{$item->thumbnail}}" alt=""> {{$item->name}}
+                                    </a>
+                                </li>
+                                @endforeach
+                            @endforeach
+                        </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </ul>
           </div>
-         
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7">
           <!-- Start Filter Bar -->
@@ -57,7 +60,7 @@
             <div class="input-group filter-bar-search">
                 <p class="pt-3">
                   <small>{{__('Search results')}}: <b>{{count($products)}}</b> {{__('for')}} <b>{{$search}}</b> </small>
-                </p>      
+                </p>
             </div>
           </div>
           @endisset
@@ -67,14 +70,14 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="card text-center card-product">
-                      <div class="card-product__img">       
+                      <div class="card-product__img">
                         @if ($product->offer > 0)
                           <div class="d-none d-sm-none d-md-block d-lg-bloc ribbon">
                             <span>{{__('Offer')}}</span>
                           </div>
-                        @endif     
+                        @endif
                         <div style="min-width: 250px; height:250px; background-image: url({{Voyager::image($product->thumbnail('medium', 'thumb'))}});background-size: contain;background-position: center center;background-repeat: no-repeat;border-radius:10px;">
-                        </div>  
+                        </div>
                         <ul class="card-product__imgOverlay">
                           <li><button><a href="{{route('product.detail' ,['slug' => $product->slug])}}"><i class="ti-search"></i></a></button></li>
                         </ul>
@@ -85,7 +88,7 @@
                             <a href="{{route('product.detail' ,['slug' => $product->slug])}}">{{( App::getLocale() == 'en' ? $product->name : $product->name_esp)}}</a>
                           </small>
                         </h4>
-                            
+
                         @if ($product->offer > 0)
                           <p class="card-product__price {{($product->offer > 0 ? 'text-success' : '')}}">${{number_format(floatval($product->offer),2)}}</p>
                         @endif
@@ -93,7 +96,7 @@
                       </div>
                     </div>
                   </div>
-                    
+
                 @endforeach
             </div>
 
@@ -101,11 +104,11 @@
               {{ $products->links('shared.pagination', ['search' => $search])}}
             @else
               {{ $products->links('shared.pagination')}}
-            @endisset            
+            @endisset
 
           </section>
           <!-- End Best Seller -->
         </div>
       </div>
-    </div>    
+    </div>
   </section>
