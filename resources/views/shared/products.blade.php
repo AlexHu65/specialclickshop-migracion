@@ -19,38 +19,10 @@
           <hr>
 
           <div class="sidebar-categories">
-            <div data-bs-toggle="collapse" data-bs-target="#modelosAccordion" aria-expanded="true" aria-controls="modelosAccordion" class="head pointer roboto d-flex justify-content-between">
-              {{ __('Models') }} <small class="s11">({{__('Show more')}})</small>
+            <div class="head pointer roboto d-flex justify-content-between">
+              {{ __('Models') }}
             </div>
-            <ul class="common-filter list-unstyled">
-              @isset($media)
-              <li class="main-categories media d-flex justify-items-between align-items-center">
-                <img style="width: 30%;" class="mr-3" src="{{asset('storage')}}/{{$media}}" alt="Generic placeholder image">
-                <div class="media-body">
-                  <span class="mt-0 mb-1 poppins"><b>{{$textMedia}}</b></span>
-                </div>
-              </li>
-              @endisset
-              <div class="accordion" id="modelosAccordion1">
-                <div class="accordion-item">
-                  <div id="modelosAccordion" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#modelosAccordion1">
-                    <div class="accordion-body">
-                        <ul class="list-group">
-                            @foreach ($categories as $category)
-                                @foreach ($category->models as $item)
-                                <li class="list-group-item">
-                                    <a class="text-dark" href="{{route('model.shop' , ['id' => $item->id])}}">
-                                        <img style="width: 20%" class="img-thumbnail b-0" src="{{asset('storage')}}/{{$item->thumbnail}}" alt=""> {{$item->name}}
-                                    </a>
-                                </li>
-                                @endforeach
-                            @endforeach
-                        </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ul>
+            <model-browser-component url="{{url('/')}}"></model-browser-component>
           </div>
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7">

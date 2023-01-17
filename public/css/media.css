@@ -8,14 +8,14 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
   }
-  
+
   .logo{
-        width: 100px;   
+        width: 100px;
    }
 }
 
 @media only screen and (min-height: 1194px)
-{ 
+{
    /* Your Styles... */
    .banner2-section {
     height: 350px;
@@ -24,14 +24,14 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
   }
-  
+
   .logo{
-        width: 100px;   
+        width: 100px;
    }
 }
 
 @media only screen and (min-width: 1194px) and (orientation: portrait)
-{ 
+{
   /* Your Styles... */
    .banner2-section {
     height: 350px;
@@ -40,14 +40,14 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
   }
-  
+
   .logo{
-        width: 100px;   
+        width: 100px;
    }
 }
 
 @media only screen and (min-width: 834px) and (orientation: landscape)
-{ /* Your Styles... */ 
+{ /* Your Styles... */
 
 /* Your Styles... */
    .banner2-section {
@@ -57,9 +57,9 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
   }
-  
+
   .logo{
-        width: 100px;   
+        width: 100px;
    }
 
 }
@@ -77,9 +77,10 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
   }
-  
+
   .logo{
-        width: 100px;   
+        width: 100px;
+        display: none;
    }
 }
 
@@ -91,7 +92,7 @@
 }
 
 @media only screen and (max-width: 1024px){
-  
+
   .banner2-section {
     height: 350px;
     background-attachment: inherit !important;
@@ -99,7 +100,7 @@
     background-repeat: no-repeat !important;
     background-position: center !important;
   }
-  
+
 
 }
 
@@ -108,7 +109,7 @@
   .banner2-section {
    display: none !important;
   }
-  
+
   .banner2-section {
     height: 350px;
     background-attachment: inherit !important;
@@ -128,7 +129,7 @@
 
   #mainBanner img{
     width: 80% !important;
-    
+
   }
 
   #category{
@@ -488,7 +489,7 @@ and (orientation: portrait) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -530,7 +531,7 @@ and (orientation: landscape) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -573,7 +574,7 @@ and (orientation: landscape) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -615,7 +616,7 @@ and (orientation: portrait) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -649,7 +650,7 @@ and (orientation: landscape) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -687,7 +688,7 @@ and (orientation: landscape) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -729,7 +730,7 @@ and (orientation: portrait) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -771,7 +772,7 @@ and (orientation: landscape) {
     background-size: cover !important;
 }
 
-  
+
 
   #parallax-1{
     background: none !important;
@@ -802,7 +803,7 @@ and (orientation: landscape) {
   .login_form_inner .login_form{
     padding: 20px !important;
   }
-  
+
   @supports ( -webkit-touch-callout : none) {
     .banner2-section {
       background-attachment:scroll

@@ -166,7 +166,7 @@ class ProductController extends Controller
 
             $parameters = [
                 'status' => true,
-                'msg' => 'Thank you for sending your comment.',
+                'msg' => __('Thank you for sending your comment.'),
                 'categories' => Categories::where(['active' => 1])->get(),
                 'title' => 'Contact'
             ];
@@ -246,7 +246,7 @@ class ProductController extends Controller
         $review->email = $request->email;
 
         if($review->save()){
-            return response(['msg' => 'Your review was received.', 'status' => true]);
+            return response(['msg' => __('Your review was received.'), 'status' => true]);
         }
 
         return response(['msg' => 'Error on review.', 'status' => false]);
@@ -303,5 +303,20 @@ class ProductController extends Controller
 
     public function colorsByModel(Request $request){
         return Inventario::with('color')->where(['articulo_id' => $request->product , 'modelo_id' => $request->model])->get();
+    }
+
+    public function getModelsBrowser(Request $request){
+
+        //Buscamos primero la categoria
+        if($request->slug){
+
+            $category = Categories::where(['slug' => $request->slug])->first();
+
+            if($category){
+                return $category->models->sortBy('id');
+            }
+        }
+
+        return Models::all(['id','name', 'thumbnail']);
     }
 }

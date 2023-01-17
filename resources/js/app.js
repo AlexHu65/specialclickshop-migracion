@@ -20,6 +20,7 @@ import Cart from './components/Cart.vue';
 import CartDetail from './components/CartDetail.vue';
 import Dashboard from './components/Dashboard.vue';
 import ProductComponent from './components/ProductComponent.vue';
+import ModelBrowser from './components/ModelBrowser.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('review-component', Review);
@@ -28,6 +29,7 @@ app.component('cart-component', Cart);
 app.component('cart-component-detail', CartDetail);
 app.component('dashboard-component', Dashboard);
 app.component('product-component', ProductComponent);
+app.component('model-browser-component', ModelBrowser);
 
 menu.component('menu-component', Menu);
 

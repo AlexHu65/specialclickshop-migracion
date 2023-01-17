@@ -13,18 +13,18 @@
                               </div>
                             @endif
                         <div class="col-sm-12 s_product_text">
-                            <h3>{{( App::getLocale() == 'en' ? $product->name : $product->name_esp)}}</h3> 
-                            <div class="addthis_inline_share_toolbox pt-3 pb-3"></div>   
+                            <h3>{{( App::getLocale() == 'en' ? $product->name : $product->name_esp)}}</h3>
+                            <div class="addthis_inline_share_toolbox pt-3 pb-3"></div>
                             <a class="active" href="{{route('categories.detail', ['slug' => $product->category->slug])}}">
                                 <strong>{{$product->category->name}}</strong>
-                            </a>   
+                            </a>
                             @if ($product->offer > 0)
                                 <h2 class="{{($product->offer > 0 ? 'text-success' : '')}}">${{number_format(floatval($product->offer),2)}}</h2>
                                 <h4 class="{{($product->offer > 0 ? 'text-danger tachado' : '')}}">${{number_format(floatval($product->price),2)}}</h4>
-                            @endif                        
-                            @if($product->offer == 0)                        
-                                <h2 class="{{($product->offer > 0 ? '' : '')}}">${{number_format(floatval($product->price),2)}}</h2>                        
-                            @endif                        
+                            @endif
+                            @if($product->offer == 0)
+                                <h2 class="{{($product->offer > 0 ? '' : '')}}">${{number_format(floatval($product->price),2)}}</h2>
+                            @endif
                             @php
                                 $newKeyword =  explode(',',$product->keywords);
                             @endphp
@@ -34,19 +34,19 @@
                                         <small>
                                             {{$keyword}}
                                         </small>
-                                    </span>                                
+                                    </span>
                                 @endforeach
                             @endif
                             <hr>
-                        </div>   
-                        <cart-component 
-                            locale="{{Config::get('app.locale')}}" 
-                            url="{{url('/')}}" 
-                            colorprimario="{{$product->colorPrincipal}}" 
-                            colorsecundario="{{$product->colorSecundario}}" 
+                        </div>
+                        <cart-component
+                            locale="{{Config::get('app.locale')}}"
+                            url="{{url('/')}}"
+                            colorprimario="{{$product->colorPrincipal}}"
+                            colorsecundario="{{$product->colorSecundario}}"
                             product="{{$product->id}}">
                         </cart-component>
-                        
+
                     </div>
                 </div>
             </div>
