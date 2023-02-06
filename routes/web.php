@@ -15,6 +15,8 @@ Auth::routes(['verify' => true]);
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home.index');
+    Route::get('/privacy-policy', 'privacy')->name('privacy.detail');
+    Route::get('/refunds', 'refund')->name('refund.detail');
 });
 
 Route::controller(ProductController::class)->group(function () {
@@ -26,7 +28,6 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/products/categories/model/{id}', 'shop')->name('model.shop');
     Route::post('/products/comment', 'comment')->name('product.comment');
     Route::get('/search/', 'search')->name('search.index');
-
 });
 
 Route::controller(CheckOutController::class)->group(function () {
@@ -58,6 +59,5 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Auth::routes();
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

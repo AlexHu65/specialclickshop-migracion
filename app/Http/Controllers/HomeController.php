@@ -45,7 +45,7 @@ class HomeController extends Controller
             'offers' => $this->offers,
             'showMainBanner' => true
           ];
-      
+
           return view('home.index', $parameters);
 
     }
@@ -56,10 +56,10 @@ class HomeController extends Controller
         switch ($request->traduccion) {
             case 'menu':
                 return $this->menuTraduccion($request->locale);
-            case 'review':                
-                return $this->ratingTraduccion($request->locale);      
+            case 'review':
+                return $this->ratingTraduccion($request->locale);
             case 'cart':
-                return $this->cartTraduccion($request->locale);          
+                return $this->cartTraduccion($request->locale);
                 break;
         }
 
@@ -68,7 +68,7 @@ class HomeController extends Controller
     }
 
     public function menuTraduccion($locale){
-        
+
         App::setLocale($locale);
 
         return [
@@ -110,6 +110,7 @@ class HomeController extends Controller
             'read1' => __('I\'ve read and accept the'),
             'read2' => __('terms & conditions'),
             'read3' => __('Please accept the terms & conditions'),
+            'read4' => __('& refunds conditions.'),
             'checkout' => __('Proceed to checkout'),
             'pleaseLogin' => __('Please login to continue'),
             'goLogin' => __('Login'),
@@ -120,7 +121,7 @@ class HomeController extends Controller
     }
 
     public function ratingTraduccion($locale){
-        
+
         App::setLocale($locale);
 
         return [
@@ -147,7 +148,7 @@ class HomeController extends Controller
         App::setLocale($locale);
 
         $langs = Config::get('languages');
-        
+
         foreach ($langs as $lang => $language) {
             if($lang != App::getLocale()){
 
@@ -158,6 +159,34 @@ class HomeController extends Controller
 
     public function banners(Request $request){
         return Banner::where(['active' => 1])->orderBy('position')->get();
+    }
+
+    public function privacy(Request $request){
+
+        $parameters = [
+            'categories' => $this->categories,
+            'title' => $this->title,
+            'posts' => $this->posts,
+            'products' => $this->products,
+            'privacy' => setting('site.privacy')
+          ];
+
+        return view('privacy.index', $parameters);
+
+    }
+
+    public function refund(Request $request){
+
+        $parameters = [
+            'categories' => $this->categories,
+            'title' => $this->title,
+            'posts' => $this->posts,
+            'products' => $this->products,
+            'privacy' => setting('site.refund')
+          ];
+
+        return view('privacy.index', $parameters);
+
     }
 
 }

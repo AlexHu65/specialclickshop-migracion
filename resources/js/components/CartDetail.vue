@@ -1,15 +1,8 @@
 <template>
 	<div v-if="this.cart.length > 0" class="row justify-content-center pt-3 pb-3">
 			<div class="col-sm-12">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item roboto" aria-current="page"> <a :href="`${url}`">{{ translates.home }}</a></li>
-						<li class="breadcrumb-item roboto" aria-current="page"> <a :href="`${utrl}/shop`">{{ translates.shop }}</a></li>
-						<li class="breadcrumb-item roboto active" aria-current="page">{{ translates.myShopping }}</li>
-					</ol>
-				</nav>
 				<ul class="list-group pt-3">
-					<li v-for="(p, index) in cart" class="list-group-item">	
+					<li v-for="(p, index) in cart" class="list-group-item">
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="m-3" :style="{
 							'background-image':`url(${url}/storage/${p.inventarioSelected.article.thumb})`,
@@ -23,8 +16,8 @@
 							<div :style="{width: '250px', minHeight: '100px'}">
 								<small> <a :href="`${this.url}/products/${p.inventarioSelected.article.slug}`">{{ p.inventarioSelected.article.name }}</a> </small><br>
 								<small> {{ p.inventarioSelected.modelo.name}} </small><br>
-								<small>Color: </small> 
-								<div class="color-rectangle p-3 bg-body rounded border  rounded-circle" 
+								<small>Color: </small>
+								<div class="color-rectangle p-3 bg-body rounded border  rounded-circle"
 									:style="{
 										'background': (p.inventarioSelected.color_secundario ? `linear-gradient(to right, ${p.inventarioSelected.color.hexadecimal} 0%,${p.inventarioSelected.color.hexadecimal} 50%,${p.inventarioSelected.color_secundario.hexadecimal} 50%,${p.inventarioSelected.color_secundario.hexadecimal} 100%)` : `${p.inventarioSelected.color.hexadecimal}`),
 										cursor:'pointer'
@@ -37,14 +30,14 @@
 								<button @click="removeCart(index)" class="btn btn-danger btn-sm float-end">
 									<i class="ti-trash"></i>
 								</button>
-							</div>	
-						</div>	
+							</div>
+						</div>
 					</li>
 					<li class="list-group-item roboto">
-						<div class="d-flex justify-content-between">							
+						<div class="d-flex justify-content-between">
 							<div class="creat_account s15">
 								<input v-model="conditions" type="checkbox" id="f-option4" name="selector">
-								<label class="p-0 m-0 mx-2" for="f-option4"> {{ translates.read1 }} <a target="_blank" href=""> {{ translates.read2 }}</a></label>
+								<label class="p-0 m-0 mx-2" for="f-option4"> {{ translates.read1 }} <a target="_blank" :href="`${url}/privacy-policy`"> {{ translates.read2 }}</a> <a target="_blank" :href="`${url}/refunds`"> {{ translates.read4 }}</a></label>
 								<br>
 								<small v-if="!conditions" class="text-danger">{{ translates.read3 }}</small>
 							</div>
@@ -57,7 +50,7 @@
 					<button @click="checkout()" class="btn btn-danger">{{ translates.checkout }}</button>
 				</div>
 			</div>
-			
+
 		</div>
 </template>
 
@@ -78,7 +71,7 @@
 			this.getTranslation();
 			this.getCart();
 			this.totalCalc();
-			
+
 			if(this.user){
 
 				const user = JSON.parse(this.user);
@@ -97,10 +90,14 @@
 			getCart(){
 				if(localStorage.cart){
 					this.cart = JSON.parse(localStorage.cart);
+
+                    if(this.cart.length == 0){
+                        return window.location.href = "/";
+                    }
 				}
 			},
 			removeCart(index){
-				
+
 				let cart = this.cart;
 
 				cart.splice(index, 1);
@@ -117,7 +114,7 @@
 			currency(float){
 				return float.toFixed(2);
 			},
-			totalCalc(){			
+			totalCalc(){
 
 				this.cart.map( p => {
 					this.numbers.push( (p.quantity *  (p.inventarioSelected.article.offer > 0 ? p.inventarioSelected.article.offer : p.inventarioSelected.article.price).toFixed(2)));
@@ -137,7 +134,7 @@
 
 				if(this.loggedUser){
 					axios.post(`${this.url}/api/cart/save`, data).then( res => {
-						
+
 						if(res.data.status){
 
 							data.carritoId = res.data.id;
@@ -151,7 +148,7 @@
 					});
 				}else{
 					this.showAlert();
-				}		
+				}
 
 			},
 			showAlert(){
@@ -164,7 +161,7 @@
 				}).then((result) => {
 					if(result.isConfirmed){
 						window.location.href = `${this.url}/login`
-					}					
+					}
 				});
 			},
 		},
